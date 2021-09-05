@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/dl86644n/express-notesapp/issues"
   },
-  "homepage": "https://github.com/dl86644n/express-notesapp#readme"
+  "homepage": "https://github.com/dl86644n/express-notesapp#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.4"
+  }
 }
