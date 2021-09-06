@@ -19,6 +19,35 @@ exports.getNotes = (req, res) => {
       res.status(200).send({ message: "Here are all the notes", data });
     })
     .catch((error) => {
-      res.status(500).send({ error: error });
+      res.status(500).send({ error: error.message });
+    });
+};
+
+exports.getNoteById = (req, res) => {
+  Notes.findById({ _id: req.params.id })
+    .then((data) => {
+      res.status(200).send({
+        message: "Here is the Note",
+        data,
+      });
+    })
+    .catch((error) => {
+      res.status(400).send({
+        error: error.message,
+      });
+    });
+};
+
+exports.deleteNoteById = (req, res) => {
+  Notes.findByIdAndDelete({ _id: req.params.id })
+    .then((data) => {
+      res.status(200).send({
+        message: "Note Successfully Deleted",
+      });
+    })
+    .catch((error) => {
+      res.status(500).send({
+        error: error.message,
+      });
     });
 };
